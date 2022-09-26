@@ -1,1 +1,2 @@
-require "core.packer.lua"
+require "core.packer"
+require "core.options"
