@@ -3,8 +3,7 @@ local ensure_packer = function()
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
+    vim.cmd [[packadd packer.nvim]] return true
   end
   return false
 end
@@ -45,8 +44,13 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
 
   -- LSP
-  use 'neovim/nvim-lspconfig'  -- enable lsp
-  use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use 'mfussenegger/nvim-dap'
+  --use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
 
   -- Telescope
   use {
@@ -78,6 +82,12 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
+
+  -- bufferline
+  use {
+    'akinsho/bufferline.nvim', tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons'
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
