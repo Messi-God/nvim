@@ -9,3 +9,4 @@
 --
 require "plugins.configs.lsp.mason"
 require "plugins.configs.lsp.lspconfig"
+require "plugins.configs.lsp.clangd"
