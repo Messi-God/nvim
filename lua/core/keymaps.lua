@@ -3,7 +3,8 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+-- local keymap = vim.api.nvim_set_keymap -- support mapping onlys
+local keymap = vim.keymap.set -- support string or function
 
 --Remap space as leader key
 --keymap("", "<Space>", "<Nop>", opts)
@@ -60,6 +61,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- nvimTree
+keymap('n', '<F2>', ':NvimTreeToggle<CR>', opt)
+--
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -68,11 +72,15 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+--vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+--vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+--vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+--vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap("n", "<leader>fg", builtin.live_grep, opt)
+keymap("n", "<leader>ff", builtin.find_files, opt)
+keymap("n", "<leader>fb", builtin.buffers, opt)
+keymap("n", "<leader>fh", builtin.help_tags, opt)
 
 -- bufferline
-vim.keymap.set('n', '<leader>1', ":BufferLineCyclePrev<CR>", {})
-vim.keymap.set('n', '<leader>2', ":BufferLineCycleNext<CR>", {})
+keymap('n', '<leader>1', ":BufferLineCyclePrev<CR>", {})
+keymap('n', '<leader>2', ":BufferLineCycleNext<CR>", {})
