@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use "nvim-telescope/telescope-live-grep-args.nvim"
 
   -- treelist
   use {
@@ -89,6 +90,8 @@ return require('packer').startup(function(use)
     'akinsho/bufferline.nvim', tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'
   }
+
+  use "lfv89/vim-interestingwords"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
