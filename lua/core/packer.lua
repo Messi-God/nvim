@@ -24,6 +24,23 @@ if not status_ok then
 	return
 end
 
+-- Have packer use a popup window
+packer.init {
+  auto_clean = true,
+  compile_on_sync = true,
+  git = { clone_timeout = 6000 },
+  display = {
+    working_sym = "ﲊ",
+    error_sym = "✗ ",
+    done_sym = " ",
+    removed_sym = " ",
+    moved_sym = "",
+    open_fn = function()
+      return require("packer.util").float { border = "single" }
+    end,
+  },
+}
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- My plugins here
@@ -91,7 +108,25 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
-  use "lfv89/vim-interestingwords"
+-- InterestintWords
+  use {
+    'lfv89/vim-interestingwords',
+    config = vim.cmd [[
+      let g:interestingWordsGUIColors = ['#FFBF00', '#33E6CC', '#ffE4E1', '#D6001E', '#808000','#C46B54']
+    ]]
+    -- vim.g.interestingWordsDefaultMappings = 0
+  }
+
+use 'voldikss/vim-translator'
+
+-- Translate
+  use "potamides/pantran.nvim"
+
+-- Lualine
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

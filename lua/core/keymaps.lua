@@ -81,6 +81,8 @@ keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
+keymap("n", "<C-\\>s", builtin.grep_string, opt)
+keymap("n", "gr", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
 
 -- bufferline
 -- keymap('n', '<leader>1', ":BufferLineCyclePrev<CR>", bufferlien_opt)
@@ -102,5 +104,13 @@ end, bufopts)
 keymap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-keymap('n', 'gr', vim.lsp.buf.references, bufopts)
+-- keymap('n', 'gr', vim.lsp.buf.references, bufopts)
 keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
+-- require ("pantran")
+-- vim.keymap.set("n", "<leader>tr", pantran.motion_translate, opt)
+-- vim.keymap.set("n", "<leader>trr", function() return pantran.motion_translate() .. "_" end, opt)
+-- vim.keymap.set("x", "<leader>tr", pantran.motion_translate, opts)
+--
+keymap('n', '<leader>t', ':TranslateW<CR>', opt)
+keymap('v', '<leader>t', ':TranslateW<CR>', opt)
