@@ -89,7 +89,7 @@ telescope.setup {
     live_grep_args = {
       auto_quoting = false, -- enable/disable auto-quoting
       -- override default mappings
-      -- default_mappings = {},
+      default_mappings = {},
       mappings = { -- extend mappings
         i = {
           ["<C-a>"] = lga_actions.quote_prompt(),
