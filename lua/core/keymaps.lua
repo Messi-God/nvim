@@ -63,13 +63,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- nvimTree
 keymap('n', '<F2>', ':NvimTreeToggle<CR>', opt)
---
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 local builtin = require('telescope.builtin')
 --vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -95,7 +88,7 @@ keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
 keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
 keymap('n', 'K', vim.lsp.buf.hover, bufopts)
 keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
-keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+-- keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
 keymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
 keymap('n', '<space>wl', function()
