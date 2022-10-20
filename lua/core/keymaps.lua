@@ -88,7 +88,7 @@ keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
 keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
 keymap('n', 'K', vim.lsp.buf.hover, bufopts)
 keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
--- keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+-- keymap('n', '<C-k>', vim.lsp.buf.signature_h1elp, bufopts)
 keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
 keymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
 keymap('n', '<space>wl', function()
@@ -97,7 +97,7 @@ end, bufopts)
 keymap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
--- keymap('n', 'gr', vim.lsp.buf.references, bufopts)
+keymap('n', 'gR', vim.lsp.buf.references, bufopts)
 keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
 -- require ("pantran")
@@ -107,3 +107,6 @@ keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufo
 --
 keymap('n', '<leader>t', ':TranslateW<CR>', opt)
 keymap('v', '<leader>t', ':TranslateW<CR>', opt)
+
+-- Hop
+keymap('n', '<leader>s', ':HopChar2<CR>', opt)
