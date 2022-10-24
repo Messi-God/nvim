@@ -9,7 +9,7 @@ local lga_actions = require("telescope-live-grep-args.actions")
 telescope.setup {
   defaults = {
 
-    path_display = { "smart" },
+    path_display = { "truncate" },
 
     mappings = {
       i = {
