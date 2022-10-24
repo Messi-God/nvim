@@ -86,6 +86,9 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+-- symbols-outline
+  use 'simrat39/symbols-outline.nvim'
+
   -- Treesitter and Comment
   use {
     "nvim-treesitter/nvim-treesitter",

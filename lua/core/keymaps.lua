@@ -63,6 +63,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- nvimTree
 keymap('n', '<F2>', ':NvimTreeToggle<CR>', opt)
+-- symbols-outline
+keymap('n', '<F3>', ':SymbolsOutline<CR>', opt)
 
 local builtin = require('telescope.builtin')
 --vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
