@@ -37,11 +37,11 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
@@ -76,6 +76,8 @@ keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
+keymap("n", "<leader>mA", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }<CR>", opt)
+keymap("n", "<leader>ma", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>", opt)
 keymap("n", "<C-\\>s", builtin.grep_string, opt)
 keymap("n", "gr", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
 
@@ -88,9 +90,9 @@ keymap("n", "gr", ":lua require('telescope.builtin').grep_string{word_match = '-
 local bufopts = { noremap=true, silent=true, buffer=bufnr }
 keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
 keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
-keymap('n', 'K', vim.lsp.buf.hover, bufopts)
+keymap('n', '<space>k', vim.lsp.buf.hover, bufopts)
 keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
--- keymap('n', '<C-k>', vim.lsp.buf.signature_h1elp, bufopts)
+-- keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
 keymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
 keymap('n', '<space>wl', function()
