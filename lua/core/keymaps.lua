@@ -76,10 +76,10 @@ keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
-keymap("n", "<leader>mA", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, search = '' }<CR>", opt)
+keymap("n", "<leader>mA", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = false, search = '' }<CR>", opt)
 keymap("n", "<leader>ma", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>", opt)
 keymap("n", "<C-\\>s", builtin.grep_string, opt)
-keymap("n", "gr", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
+keymap("n", "gR", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
 
 -- bufferline
 -- keymap('n', '<leader>1', ":BufferLineCyclePrev<CR>", bufferlien_opt)
@@ -101,7 +101,7 @@ end, bufopts)
 keymap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-keymap('n', 'gR', vim.lsp.buf.references, bufopts)
+keymap('n', 'gr', vim.lsp.buf.references, bufopts)
 keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
 -- require ("pantran")
