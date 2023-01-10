@@ -36,6 +36,7 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldenable = true,
   foldmethod = manual,
+  autowrite=true,
 }
 
 vim.opt.shortmess:append "c"
@@ -61,9 +62,14 @@ vim.cmd [[
             \ }
 ]]
 
--- Clear extra space in the line end
+
 vim.cmd[[
   if has("autocmd")
+    " auto jump the line before
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    " Clear extra space in the line end
     autocmd BufWritePre * :%s/\s\+$//e
+    " for asm read better, use with arm-syntax-vim plugin
+    au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
   endif
 ]]

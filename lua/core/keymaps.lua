@@ -76,6 +76,7 @@ keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.l
 keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
+keymap("n", "<leader>fr", builtin.lsp_dynamic_workspace_symbols, opt)
 keymap("n", "<leader>mA", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = false, search = '' }<CR>", opt)
 keymap("n", "<leader>ma", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>", opt)
 keymap("n", "<C-\\>s", builtin.grep_string, opt)
