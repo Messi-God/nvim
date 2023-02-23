@@ -25,6 +25,10 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "qq", "<C-w>q", opts)
+
+-- Window zoom
+keymap("n", "zz", ":lua require('custom.functions').WindowZoom() <CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -66,6 +70,9 @@ keymap('n', '<F2>', ':NvimTreeToggle<CR>', opt)
 -- symbols-outline
 keymap('n', '<F3>', ':SymbolsOutline<CR>', opt)
 
+keymap('v', '<C-c>', '"+yy', opt)
+keymap('n', '<C-p>', '"+p', opt)
+
 local builtin = require('telescope.builtin')
 --vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -73,6 +80,7 @@ local builtin = require('telescope.builtin')
 --vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- keymap("n", "<leader>fg", builtin.live_grep, opt)
 keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opt)
+keymap("n", "<leader>fk", ":lua require('telescope').keymaps()<CR>", opt)
 keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
@@ -103,7 +111,7 @@ keymap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+keymap('n', 'gc', vim.lsp.buf.outgoing_calls, bufopts)
 
 -- require ("pantran")
 -- vim.keymap.set("n", "<leader>tr", pantran.motion_translate, opt)

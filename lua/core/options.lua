@@ -1,6 +1,6 @@
 local options = {
   backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  -- clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
@@ -48,19 +48,19 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
-vim.cmd [[
-      let g:clipboard = {
-            \   'name': 'unnamedplus',
-            \   'copy': {
-            \      '+': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
-            \      '*': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
-            \    },
-            \   'paste': {
-            \      '+': {-> get(g:, 'foo', [])},
-            \      '*': {-> get(g:, 'foo', [])},
-            \   },
-            \ }
-]]
+-- vim.cmd [[
+--       let g:clipboard = {
+--             \   'name': 'unnamedplus',
+--             \   'copy': {
+--             \      '+': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
+--             \      '*': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
+--             \    },
+--             \   'paste': {
+--             \      '+': {-> get(g:, 'foo', [])},
+--             \      '*': {-> get(g:, 'foo', [])},
+--             \   },
+--             \ }
+-- ]]
 
 
 vim.cmd[[
