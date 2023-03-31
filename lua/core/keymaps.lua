@@ -112,6 +112,7 @@ keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 keymap('n', 'gr', vim.lsp.buf.references, bufopts)
 keymap('n', 'gc', vim.lsp.buf.outgoing_calls, bufopts)
+keymap('n', '<space>ft', vim.lsp.buf.format, bufopts)
 
 -- require ("pantran")
 -- vim.keymap.set("n", "<leader>tr", pantran.motion_translate, opt)

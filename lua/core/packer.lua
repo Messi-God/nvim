@@ -167,6 +167,19 @@ use {
     }
   end
 }
+
+use {
+  'glepnir/lspsaga.nvim',
+  branch = "main",
+  config = function()
+    require("lspsaga").setup({})
+    require("plugins.configs.lspsaga")
+  end,
+  requires = {
+    {"nvim-tree/nvim-web-devicons"},
+    {"nvim-treesitter/nvim-treesitter"},
+  }
+}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
