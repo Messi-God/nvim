@@ -1,7 +1,8 @@
+require("nvim-treesitter.install").prefer_git = true
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  --ensure_installed = { "c", "lua", "rust" "asm", "python"},
-  ensure_installed = "all",
+  ensure_installed = { "c", "lua", "rust", "python"},
+  -- ensure_installed = "all",
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
