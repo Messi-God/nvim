@@ -66,14 +66,14 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- nvimTree
-keymap('n', '<F2>', ':NvimTreeToggle<CR>', opt)
+keymap("n", "<F2>", ":NvimTreeToggle<CR>", opt)
 -- symbols-outline
-keymap('n', '<F3>', ':SymbolsOutline<CR>', opt)
+keymap("n", "<F3>", ":SymbolsOutline<CR>", opt)
 
-keymap('v', '<C-c>', '"+yy', opt)
-keymap('n', '<C-p>', '"+p', opt)
+keymap("v", "<C-c>", '"+yy', opt)
+keymap("n", "<C-p>", '"+p', opt)
 
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 --vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 --vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
@@ -85,8 +85,18 @@ keymap("n", "<leader>ff", builtin.find_files, opt)
 keymap("n", "<leader>fb", builtin.buffers, opt)
 keymap("n", "<leader>fh", builtin.help_tags, opt)
 keymap("n", "<leader>fr", builtin.lsp_dynamic_workspace_symbols, opt)
-keymap("n", "<leader>mA", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = false, search = '' }<CR>", opt)
-keymap("n", "<leader>ma", ":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>", opt)
+keymap(
+	"n",
+	"<leader>mA",
+	":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = false, search = '' }<CR>",
+	opt
+)
+keymap(
+	"n",
+	"<leader>ma",
+	":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>",
+	opt
+)
 keymap("n", "<C-\\>s", builtin.grep_string, opt)
 keymap("n", "gR", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
 
@@ -96,31 +106,31 @@ keymap("n", "gR", ":lua require('telescope.builtin').grep_string{word_match = '-
 
 -- Mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-local bufopts = { noremap=true, silent=true, buffer=bufnr }
-keymap('n', 'gD', vim.lsp.buf.declaration, bufopts)
-keymap('n', 'gd', vim.lsp.buf.definition, bufopts)
-keymap('n', '<space>k', vim.lsp.buf.hover, bufopts)
-keymap('n', 'gi', vim.lsp.buf.implementation, bufopts)
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
+keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
+keymap("n", "gd", vim.lsp.buf.definition, bufopts)
+keymap("n", "<space>k", vim.lsp.buf.hover, bufopts)
+keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
 -- keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-keymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-keymap('n', '<space>wl', function()
-  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+keymap("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+keymap("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+keymap("n", "<space>wl", function()
+	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, bufopts)
-keymap('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-keymap('n', 'gc', vim.lsp.buf.outgoing_calls, bufopts)
-keymap('n', '<space>ft', vim.lsp.buf.format, bufopts)
+keymap("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
+keymap("n", "<space>rn", vim.lsp.buf.rename, bufopts)
+keymap("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+keymap("n", "gr", vim.lsp.buf.references, bufopts)
+keymap("n", "gc", vim.lsp.buf.outgoing_calls, bufopts)
+keymap("n", "<space>ft", vim.lsp.buf.format, bufopts)
 
 -- require ("pantran")
 -- vim.keymap.set("n", "<leader>tr", pantran.motion_translate, opt)
 -- vim.keymap.set("n", "<leader>trr", function() return pantran.motion_translate() .. "_" end, opt)
 -- vim.keymap.set("x", "<leader>tr", pantran.motion_translate, opts)
 --
-keymap('n', '<leader>t', ':TranslateW<CR>', opt)
-keymap('v', '<leader>t', ':TranslateW<CR>', opt)
+keymap("n", "<leader>t", ":TranslateW<CR>", opt)
+keymap("v", "<leader>t", ":TranslateW<CR>", opt)
 
 -- Hop
-keymap('n', '<leader>s', ':HopChar2<CR>', opt)
+keymap("n", "<leader>s", ":HopChar2<CR>", opt)

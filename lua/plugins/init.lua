@@ -1,15 +1,15 @@
-require "plugins.configs.molokai"
-require "plugins.configs.cmp"
-require "plugins.configs.lsp"
-require "plugins.configs.telescope"
-require "plugins.configs.nvim-tree"
-require "plugins.configs.comments"
-require "plugins.configs.treesitter"
-require "plugins.configs.gitsigns"
+require("plugins.configs.molokai")
+require("plugins.configs.cmp")
+require("plugins.configs.lsp")
+require("plugins.configs.telescope")
+require("plugins.configs.nvim-tree")
+require("plugins.configs.comments")
+require("plugins.configs.treesitter")
+require("plugins.configs.gitsigns")
 -- require "plugins.configs.bufferline"
-require "plugins.configs.lualine"
-require "plugins.configs.pantran"
-require "plugins.configs.hop"
-require "plugins.configs.sym-outline"
-require "plugins.configs.lsp_signature"
+require("plugins.configs.lualine")
+require("plugins.configs.pantran")
+require("plugins.configs.hop")
+require("plugins.configs.sym-outline")
+require("plugins.configs.lsp_signature")
 -- require "plugins.configs.lspsaga"

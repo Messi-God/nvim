@@ -1,3 +1,3 @@
 require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer", "clangd" }
+	ensure_installed = { "rust_analyzer", "clangd" },
 })

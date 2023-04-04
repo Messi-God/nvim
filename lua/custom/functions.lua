@@ -1,8 +1,7 @@
-
-local M = { }
+local M = {}
 -- Toggle window fullscreen
 M.WindowZoom = function()
-  vim.cmd [[
+	vim.cmd([[
     " check if is the zoomed state (tabnumber > 1 && window == 1)
     if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
       let cur_winview = winsaveview()
@@ -16,7 +15,7 @@ M.WindowZoom = function()
     else
       tab split
     endif
-  ]]
+  ]])
 end
 
 return M
