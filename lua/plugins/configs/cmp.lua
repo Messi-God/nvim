@@ -110,10 +110,16 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
+		{ name = "nvim_lsp" }, -- LSP 补全源
+		{ name = "buffer" }, -- 当前 buffer 补全源
+		{ name = "path" }, -- 文件路径补全源
+		{ name = "emoji" }, -- Emoji 补全源
+		{ name = "tmux" }, -- Tmux 补全源
+		{ name = "calc" }, -- 计算器补全源
+		{ name = "spell" }, -- 拼写检查补全源
+		{ name = "snippets" }, -- 代码片段补全源
+		{ name = "treesitter" }, -- TreeSitter 补全源
+		{ name = "vim-dadbod-completion" }, -- vim-dadbod 补全源
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
