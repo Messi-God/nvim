@@ -14,6 +14,10 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    -- diagnostics.flake8
+		diagnostics.eslint,
+		null_ls.builtins.completion.spell,
+		formatting.clang_format,
+		formatting.shfmt, -- shell script formatting
+		-- diagnostics.flake8
 	},
 })
