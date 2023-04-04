@@ -46,7 +46,11 @@ return require('packer').startup(function(use)
   -- My plugins here
 
   -- theme
-  use 'UtkarshVerma/molokai.nvim'
+  use {
+	'UtkarshVerma/molokai.nvim',
+	disable = true
+
+  }
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp'
