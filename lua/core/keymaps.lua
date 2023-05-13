@@ -19,6 +19,11 @@ local keymap = vim.keymap.set -- support string or function
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- disable @q
+keymap('n', 'q', '<Nop>', opts)
+-- enable @q
+-- keymap('n', 'q', '@q', opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -41,8 +46,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -70,7 +75,7 @@ keymap("n", "<F2>", ":NvimTreeToggle<CR>", opt)
 -- symbols-outline
 keymap("n", "<F3>", ":SymbolsOutline<CR>", opt)
 
-keymap("v", "<C-c>", '"+yy', opt)
+keymap({"v", "n"}, "<C-c>", '"+yy', opt)
 keymap("n", "<C-p>", '"+p', opt)
 
 local builtin = require("telescope.builtin")

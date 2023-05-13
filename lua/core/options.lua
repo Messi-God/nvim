@@ -37,6 +37,8 @@ local options = {
 	foldenable = true,
 	foldmethod = manual,
 	autowrite = true,
+	spell = true,
+	spelllang = "en_us"
 }
 
 vim.opt.shortmess:append("c")
