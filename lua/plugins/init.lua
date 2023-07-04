@@ -12,4 +12,5 @@ require("plugins.configs.pantran")
 require("plugins.configs.hop")
 require("plugins.configs.sym-outline")
 require("plugins.configs.lsp_signature")
+require("plugins.configs.tmux")
 -- require "plugins.configs.lspsaga"

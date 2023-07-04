@@ -111,6 +111,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" }, -- LSP 补全源
+		{ name = "luasnip" }, -- LSP 补全源
 		{ name = "buffer" }, -- 当前 buffer 补全源
 		{ name = "path" }, -- 文件路径补全源
 		{ name = "emoji" }, -- Emoji 补全源
