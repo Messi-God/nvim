@@ -70,8 +70,13 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
-	use("mfussenegger/nvim-dap")
+
+	-- DAP
 	--use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	-- use("jay-babu/mason-nvim-dap.nvim")
+	use("theHamsta/nvim-dap-virtual-text")
 
 	-- Telescope
 	use({
