@@ -9,7 +9,10 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
+	debug = true,
+	on_init = function(new_client, _)
+		new_client.offset_encoding = "utf-8"
+	end,
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
@@ -17,6 +20,7 @@ null_ls.setup({
 		diagnostics.eslint,
 		null_ls.builtins.completion.spell,
 		formatting.clang_format,
+		formatting.cmake_format,
 		formatting.shfmt, -- shell script formatting
 		-- diagnostics.flake8
 	},

@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
 	-- theme
 	use({
 		"UtkarshVerma/molokai.nvim",
-		disable = true,
+		-- disable = true,
 	})
 
 	-- cmp plugins
