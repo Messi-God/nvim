@@ -15,3 +15,4 @@ require("plugins.configs.lsp_signature")
 require("plugins.configs.tmux")
 -- require "plugins.configs.lspsaga"
 require("plugins.configs.dap")
+require("plugins.configs.autopairs")
