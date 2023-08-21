@@ -59,62 +59,62 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+-- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+-- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- keymap("v", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+-- keymap("v", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- nvimTree
-keymap("n", "<F2>", ":NvimTreeToggle<CR>", opt)
+keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
 -- symbols-outline
-keymap("n", "<F3>", ":SymbolsOutline<CR>", opt)
+keymap("n", "<F3>", ":SymbolsOutline<CR>", opts)
 
-keymap({"v", "n"}, "<C-c>", '"+yy', opt)
-keymap("n", "<C-p>", '"+p', opt)
+keymap({"v", "n"}, "<C-c>", '"+yy', opts)
+keymap("n", "<C-p>", '"+p', opts)
 
 local builtin = require("telescope.builtin")
 --vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 --vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 --vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 --vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- keymap("n", "<leader>fg", builtin.live_grep, opt)
-keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opt)
-keymap("n", "<leader>fk", builtin.keymaps, opt)
-keymap("n", "<leader>ff", builtin.find_files, opt)
-keymap("n", "<leader>fb", builtin.buffers, opt)
-keymap("n", "<leader>fh", builtin.help_tags, opt)
-keymap("n", "<leader>fr", builtin.lsp_dynamic_workspace_symbols, opt)
+-- keymap("n", "<leader>fg", builtin.live_grep, opts)
+keymap("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)
+keymap("n", "<leader>fk", builtin.keymaps, opts)
+keymap("n", "<leader>ff", builtin.find_files, opts)
+keymap("n", "<leader>fb", builtin.buffers, opts)
+keymap("n", "<leader>fh", builtin.help_tags, opts)
+keymap("n", "<leader>fr", builtin.lsp_dynamic_workspace_symbols, opts)
 keymap(
 	"n",
 	"<leader>mA",
 	":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = false, search = '' }<CR>",
-	opt
+	opts
 )
 keymap(
 	"n",
 	"<leader>ma",
-	":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, search = '' }<CR>",
-	opt
+	":lua require('telescope.builtin').grep_string{shorten_path = true, word_match = '-w', only_sort_text = true, grep_open_files = true, cwd = '', search = '' }<CR>",
+	opts
 )
-keymap("n", "<C-\\>s", builtin.grep_string, opt)
-keymap("n", "gR", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opt)
+keymap("n", "<C-\\>s", builtin.grep_string, opts)
+keymap("n", "gR", ":lua require('telescope.builtin').grep_string{word_match = '-w', only_sort_text = true }<CR>", opts)
 
 -- bufferline
--- keymap('n', '<leader>1', ":BufferLineCyclePrev<CR>", bufferlien_opt)
--- keymap('n', '<leader>2', ":BufferLineCycleNext<CR>", bufferlien_opt)
+-- keymap('n', '<leader>1', ":BufferLineCyclePrev<CR>", bufferlien_opts)
+-- keymap('n', '<leader>2', ":BufferLineCycleNext<CR>", bufferlien_opts)
 
 -- Mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 keymap("n", "gD", vim.lsp.buf.declaration, bufopts)
 keymap("n", "gd", vim.lsp.buf.definition, bufopts)
-keymap("n", "<space>k", vim.lsp.buf.hover, bufopts)
+-- keymap("n", "<space>k", vim.lsp.buf.hover, bufopts)
 keymap("n", "gi", vim.lsp.buf.implementation, bufopts)
 -- keymap('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 keymap("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
@@ -129,16 +129,16 @@ keymap("n", "gr", vim.lsp.buf.references, bufopts)
 keymap("n", "gc", vim.lsp.buf.outgoing_calls, bufopts)
 keymap("n", "<space>ft", vim.lsp.buf.format, bufopts)
 
--- require ("pantran")
--- vim.keymap.set("n", "<leader>tr", pantran.motion_translate, opt)
--- vim.keymap.set("n", "<leader>trr", function() return pantran.motion_translate() .. "_" end, opt)
--- vim.keymap.set("x", "<leader>tr", pantran.motion_translate, opts)
---
-keymap("n", "<leader>t", ":TranslateW<CR>", opt)
-keymap("v", "<leader>t", ":TranslateW<CR>", opt)
+-- local pantran_opts = {noremap = true, silent = true, expr = true}
+-- keymap("n", "<leader>tr", pantran.motion_translate, pantran_opts)
+-- keymap("n", "<leader>trr", function() return pantran.motion_translate() .. "_" end, pantran_opts)
+-- keymap("x", "<leader>tr", pantran.motion_translate, pantran_opts)
+
+keymap("n", "<leader>t", ":TranslateW<CR>", opts)
+keymap("v", "<leader>t", ":TranslateW<CR>", opts)
 
 -- Hop
-keymap("n", "<leader>s", ":HopChar2<CR>", opt)
+keymap("n", "<leader>s", ":HopChar2<CR>", opts)
 
 keymap('n', '<F5>', function() require('dap').continue() end)
 keymap('n', '<F10>', function() require('dap').step_over() end)
@@ -163,3 +163,7 @@ keymap('n', '<Leader>ds', function()
   local widgets = require('dap.ui.widgets')
   widgets.centered_float(widgets.scopes)
 end)
+
+-- Notice lspconfig LSPAttach
+vim.cmd([[command! -nargs=1 Man !man <args>]])
+keymap('n', 'K', ':Man <C-R>=expand("<cword>")<CR><CR>', opts)
