@@ -10,7 +10,9 @@ vim.fn.sign_define("DapLogPoint", { text = "ﱴ", texthl = "", linehl = "", numh
 vim.fn.sign_define("DapStopped", { text = "🛑", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "", linehl = "", numhl = "" })
 
--- require('dap.ext.vscode').load_launchjs(nil, { cppdbg = {'c', 'cpp'} })
+require('dap.ext.vscode').load_launchjs(nil, { cppdbg = {'c', 'cpp'} })
+require("dap.ext.vscode").load_launchjs(nil, { codelldb = { "c", "cpp" } })
+
 dap.adapters.codelldb = {
 	type = "server",
 	port = "${port}",

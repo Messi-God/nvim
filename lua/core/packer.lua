@@ -109,6 +109,14 @@ return require("packer").startup(function(use)
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
+	-- orgmode
+	use({
+		"nvim-orgmode/orgmode",
+		config = function()
+			require("orgmode").setup({})
+		end,
+	})
+
 	-- gitsigns
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -131,7 +139,12 @@ return require("packer").startup(function(use)
 		-- vim.g.interestingWordsDefaultMappings = 0
 	})
 
-	use("voldikss/vim-translator")
+	use({
+		"voldikss/vim-translator",
+		config = vim.cmd([[
+			let g:translator_window_type = 'floatwin'
+		]]),
+	})
 
 	-- Translate
 	use("potamides/pantran.nvim")
@@ -208,6 +221,27 @@ return require("packer").startup(function(use)
 			require("nvim-autopairs").setup({})
 		end,
 	})
+
+	use({
+		"amitds1997/remote-nvim.nvim",
+		config = function()
+			require("remote-nvim").setup({})
+		end,
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+			-- This would be an optional dependency eventually
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+
+	use({
+		"nosduco/remote-sshfs.nvim",
+		requires = { { "nvim-telescope/telescope.nvim" } }, -- optional if you declare plugin somewhere else
+	})
+
+	use 'tpope/vim-fugitive'
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

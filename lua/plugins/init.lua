@@ -16,3 +16,5 @@ require("plugins.configs.tmux")
 -- require "plugins.configs.lspsaga"
 require("plugins.configs.dap")
 require("plugins.configs.autopairs")
+require("plugins.configs.orgmode")
+require("plugins.configs.sshfs")

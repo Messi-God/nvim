@@ -10,6 +10,8 @@ telescope.setup({
 	defaults = {
 
 		path_display = { "truncate" },
+		-- sorting_strategy = "ascending",
+		dynamic_preview_title = true,
 
 		mappings = {
 			i = {

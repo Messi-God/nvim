@@ -109,7 +109,8 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-	sources = {
+	sources = cmp.config.sources({
+		{ name = "orgmode" },
 		{ name = "nvim_lsp" }, -- LSP 补全源
 		{ name = "luasnip" }, -- LSP 补全源
 		{ name = "buffer" }, -- 当前 buffer 补全源
@@ -121,7 +122,7 @@ cmp.setup({
 		{ name = "snippets" }, -- 代码片段补全源
 		{ name = "treesitter" }, -- TreeSitter 补全源
 		{ name = "vim-dadbod-completion" }, -- vim-dadbod 补全源
-	},
+	}),
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,

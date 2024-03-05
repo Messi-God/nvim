@@ -167,3 +167,5 @@ end)
 -- Notice lspconfig LSPAttach
 vim.cmd([[command! -nargs=1 Man !man <args>]])
 keymap('n', 'K', ':Man <C-R>=expand("<cword>")<CR><CR>', opts)
+
+keymap("n", "<leader>gb", ":Git blame<CR>", opts)
