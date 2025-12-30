@@ -1,5 +1,3 @@
-require "core.packer"
-require "core.options"
-require "plugins"
-require "core.keymaps"
-require "custom.functions"
+require "config.options"
+require "config.keymaps"
+require "config.lazy"
